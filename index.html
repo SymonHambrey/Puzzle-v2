@@ -1,0 +1,54 @@
+<!-- (C) 2018 Symon Hambrey -->
+<!-- www.symonhambrey@gmail.com -->
+
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+  <head>
+
+    <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="style.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet"/>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-2">
+          <div class="scoreboards" id="left_side">
+            <h2 class="text-center">Human Score</h2>
+            <h3 class="text-center" id="human_score">0</h3>
+          </div>
+        </div>
+        <div class="col-sm-8" id="game_area">
+          <svg id="mySVG" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+        </div>
+        <div class="col-sm-2">
+          <div class="scoreboards" id="right_side">
+            <h2 class="text-center">Computer Score</h2>
+            <h3 class="text-center" id="computer_score">0</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/addScores.js"></script>
+    <script type="text/javascript" src="js/gamePlay.js"></script>
+    <script type="text/javascript" src="js/setupNumbers.js"></script>
+    <script type="text/javascript" src="js/setupGrid.js"></script>
+    <script type="text/javascript" src="js/gameSetup.js"></script>
+
+  </body>
+
+</html>
