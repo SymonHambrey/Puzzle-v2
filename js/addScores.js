@@ -33,14 +33,14 @@ function add_scores(score_to_add, player_or_computer, col, row, end){
       clearInterval(score_ticker)
       end(true)
       if(player_or_computer==="human"){
-        $("#left_side").css("border-style","hidden");
-        $("#right_side").css("border-style","solid");
+        $("#left_side").css("border-color","#fff");
+        $("#right_side").css("border-color","#000");
         pop.play();
         computer_turn(col, row);
       }
       else{
-        $("#right_side").css("border-style","hidden");
-        $("#left_side").css("border-style","solid");
+        $("#right_side").css("border-color","#fff");
+        $("#left_side").css("border-color","#000");
         pop.play();
         human_turn(row);
       }

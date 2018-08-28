@@ -29,6 +29,11 @@ function createCircle(stroke,size,cx,cy,row,column,number,tx){
   if(wd>ratio*grid_size){
     cx=cx+((wd-(ratio*grid_size))/(grid_size/2));
   }
+  else{
+    size-=1;
+    cx-=2;
+    $("#right_side").css("margin-top","-5%");
+  }
 
   var circle=document.createElementNS(svgNS,"circle");
   circle.setAttributeNS(null,"class","game-circle");

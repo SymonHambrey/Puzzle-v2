@@ -19,9 +19,13 @@ function human_turn(row){
   .mouseleave(function(){
     $(".game-circle").attr("fill-opacity","1");
   }).click(function(){
-    $(".game-circle, .game-text").off();
-    $(".game-text").attr("fill","#000");
-    remove_and_add(row_num, col_num, "human");
+    console.log(row_num+" "+col_num)
+    // withought the below line, the game stops if you click on an empty space
+    if(!isNaN(parseInt(($("#"+row_num+"-number-"+col_num).text())))){
+      $(".game-circle, .game-text").off();
+      $(".game-text").attr("fill","#000");
+      remove_and_add(row_num, col_num, "human");
+    }
   });
 }
 
