@@ -1,7 +1,6 @@
-var radius=ht_area/2;
+var radius=(ratio/2);
 var diameter=radius*2;
 var stroke_colour="#000";
-$("#mySVG").css("height",ht);
 var stroke_width=3;
 
 function set_grid(){
@@ -27,6 +26,9 @@ function createCircle(stroke,size,cx,cy,row,column,number,tx){
   };
   if(number>9){ var text_x=tx*15; };
   if(number<-9){ var text_x=tx*20; };
+  if(wd>ratio*grid_size){
+    cx=cx+((wd-(ratio*grid_size))/(grid_size/2));
+  }
 
   var circle=document.createElementNS(svgNS,"circle");
   circle.setAttributeNS(null,"class","game-circle");

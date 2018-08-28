@@ -1,11 +1,9 @@
-var grid_size=4;
+var grid_size=5;
 var start_row=Math.floor((Math.random()*grid_size));
-console.log(start_row)
 var low_points=grid_size-(grid_size*2);
 var high_points=grid_size;
-var wd=($("#game_area").width())/grid_size;
-var ht=($(document).height());
-var ht_area=ht/grid_size;
+var wd=0,ht=0,ratio=0;
+get_screen_size();
 
 // Populate numbers
 function populate_numbers(){
@@ -42,3 +40,21 @@ function shuffle_numbers(array){
   };
   return array;
 };
+
+function get_screen_size(){
+  var window_width=$(window).width();
+  var window_height=$(window).height();
+  var game_width=$("#game_area").width();
+  var game_height=$("#game_area").height();
+  if(window_width>window_height){
+    wd=game_width;
+    ht=window_height;
+    ratio=window_height/grid_size;
+  }
+  else{
+    wd=game_height;
+    ht=window_width;
+    ratio=game_width/grid_size;
+  }
+  $("#mySVG").css("height",ht);
+}
