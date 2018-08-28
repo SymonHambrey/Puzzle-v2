@@ -1,4 +1,4 @@
-var grid_size=5;
+var grid_size=8;
 var start_row=Math.floor((Math.random()*grid_size));
 var low_points=grid_size-(grid_size*2);
 var high_points=grid_size;
