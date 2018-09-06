@@ -1,9 +1,9 @@
-var radius=(ratio/2);
-var diameter=radius*2;
 var stroke_colour="#000";
 var stroke_width=3;
 
 function set_grid(){
+  var radius=(ratio/2);
+  var diameter=radius*2;
   var count=0;
   var adjusted_x=((diameter+radius)/100);
   for(row=0;row<grid_size;row++){

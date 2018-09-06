@@ -79,28 +79,35 @@ function computer_move(row, col, pos, end){
 }
 
 function game_over(player){
+  $("#selection").detach();
+  $("#suplementary").append("<p>Play again?</p>");
+  var choice="<button type='button' id='yes' class='btn btn-primary'>Yes</button><button type='button' id='no' class='btn btn-default'>No</button>"
+  $("#buttons").append(choice);
   if(player_score>computer_score){
     setTimeout(function(){
-      var answer=confirm("Human Wins! "+player_score+" points\nPlay again?");
-      if(answer){
-        location.reload();
-      }
+      $("#mod_title").text("Human Wins!");
+      $("#mod_text").text(player_score+" to "+computer_score);
+      $("#myModal").modal("show");
     },1000)
   }
   else if(player_score<computer_score){
     setTimeout(function(){
-      var answer=confirm("Computer Wins! "+computer_score+" points\nPlay again?");
-      if(answer){
-        location.reload();
-      }
+      $("#mod_title").text("Computer Wins!");
+      $("#mod_text").text(computer_score+" to "+player_score);
+      $("#myModal").modal("show");
     },1000)
   }
   else{
     setTimeout(function(){
-      var answer=confirm("It's a draw!\nPlay again?");
-      if(answer){
-        location.reload();
-      }
+      $("#mod_title").text("It's a Draw!");
+      $("#mod_text").text(computer_score+" "+player_score);
+      $("#myModal").modal("show");
     },1000)
   }
+  $("#yes").click(function(){
+    location.reload();
+  });
+  $("#no").click(function(){
+    location.href="https://hambreyhome.ddns.net";
+  });
 }

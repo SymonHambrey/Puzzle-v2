@@ -1,12 +1,9 @@
-var grid_size=8;
-var start_row=Math.floor((Math.random()*grid_size));
-var low_points=grid_size-(grid_size*2);
-var high_points=grid_size;
-var wd=0,ht=0,ratio=0;
-get_screen_size();
-
 // Populate numbers
-function populate_numbers(){
+function populate_numbers(grid_size){
+  grid_size=parseInt(grid_size);
+  start_row=Math.floor((Math.random()*grid_size));
+  low_points=grid_size-(grid_size*2);
+  high_points=grid_size;
   var grid_number=[];
   points=low_points;
   for(i=0;i<grid_size*grid_size;i++){
@@ -41,7 +38,7 @@ function shuffle_numbers(array){
   return array;
 };
 
-function get_screen_size(){
+function get_screen_size(grid_size){
   var window_width=$(window).width();
   var window_height=$(window).height();
   var game_width=$("#game_area").width();
@@ -49,12 +46,12 @@ function get_screen_size(){
   if(window_width>window_height){
     wd=game_width;
     ht=window_height;
-    ratio=window_height/grid_size;
+    ratio=parseInt(window_height/grid_size);
   }
   else{
     wd=game_height;
     ht=window_width;
-    ratio=game_width/grid_size;
+    ratio=parseInt(game_width/grid_size);
   }
   $("#mySVG").css("height",ht);
 }
